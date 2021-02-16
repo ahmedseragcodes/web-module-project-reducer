@@ -5,7 +5,7 @@ import './App.css';
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 import reducer, { initialState } from "../src/reducers/index";
-import { addOne, applyNumber, changeOperation, clearDisplay, memorizeTotal, memoryRecall } from "../src/actions/index";
+import { addOne, applyNumber, changeOperation, clearDisplay, memorizeTotal, memoryRecall, memoryClear } from "../src/actions/index";
 
 function App() {
 
@@ -32,6 +32,9 @@ function App() {
   const memoryRecaller=()=>{
     dispatch(memoryRecall())
   }
+  const memoryClearer=()=>{
+    dispatch(memoryClear())
+  }
 
   return (
     <div className="App">
@@ -52,7 +55,7 @@ function App() {
             <div className="row">
               <CalcButton value={"M+"} onClick={()=>memorizeTotaler()} />
               <CalcButton value={"MR"} onClick={()=>memoryRecaller()} />
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"MC"} onClick={()=>memoryClearer()} />
             </div>
 
             <div className="row">
