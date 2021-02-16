@@ -11,13 +11,12 @@ function App() {
 
   const [state, dispatch]=useReducer(reducer, initialState);
 
-  const additionHandler=()=>{
-   
-    dispatch({type: "ADD_ONE"});
+  const additionHandler=(event)=>{
+    dispatch(addOne(event.target.value));
   }
 
   const applyHandler=(input)=>{
-    applyNumber(input);
+    dispatch(applyNumber(input));
   }
 
   return (
@@ -43,21 +42,21 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1} onClick={applyHandler(1)} /> {/*onClick={additionHandler} commented out */}
-              <CalcButton value={2}/>
-              <CalcButton value={3}/>
+              <CalcButton value={1} onClick={()=> applyHandler(1)} /> 
+              <CalcButton value={2} onClick={()=> applyHandler(2)} />
+              <CalcButton value={3} onClick={()=> applyHandler(3)}/>
             </div>
 
             <div className="row">
-              <CalcButton value={4}/>
-              <CalcButton value={5}/>
-              <CalcButton value={6}/>
+              <CalcButton value={4} onClick={()=> applyHandler(4)}/>
+              <CalcButton value={5} onClick={()=> applyHandler(5)}/>
+              <CalcButton value={6} onClick={()=> applyHandler(6)}/>
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton value={7} onClick={()=> applyHandler(7)}/>
+              <CalcButton value={8} onClick={()=> applyHandler(8)}/>
+              <CalcButton value={9} onClick={()=> applyHandler(9)}/>
             </div>
 
             <div className="row">
