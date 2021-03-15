@@ -6,7 +6,7 @@ import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 
 import { connect } from "react-redux";
-import { addOne, applyNumber, changeOperation } from "./actions/index";
+import { addOne, applyNumber, changeOperation, clearDisplay, addToMemory, memoryRecall, clearMemory } from "./actions/index";
 
 function App(props) {
 
@@ -79,4 +79,4 @@ const mapStateToProps = (state) =>{
   }
 }
 
-export default connect(mapStateToProps, { addOne, applyNumber, changeOperation })(App);
+export default connect(mapStateToProps, { addOne, applyNumber, changeOperation, clearDisplay, addToMemory, memoryRecall, clearMemory })(App);

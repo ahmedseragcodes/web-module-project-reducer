@@ -1,4 +1,4 @@
-import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION } from './../actions';
+import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, ADD_TO_MEMORY, MEMORY_RECALL, CLEAR_MEMORY } from './../actions';
 
 export const initialState = {
     total: 100,
@@ -38,7 +38,14 @@ const reducer = (state=initialState, action) => {
                 ...state,
                 operation: action.payload
             });
-            
+        case(CLEAR_DISPLAY):
+            return state;
+        case(ADD_TO_MEMORY):
+            return state;
+        case(MEMORY_RECALL):
+            return state;
+        case(CLEAR_MEMORY):
+            return state;
         default:
             return state;
     }
