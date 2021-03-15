@@ -39,13 +39,26 @@ const reducer = (state=initialState, action) => {
                 operation: action.payload
             });
         case(CLEAR_DISPLAY):
-            return state;
+            return ({
+                ...state,
+                total: 0,
+                operation: "*",
+            })
         case(ADD_TO_MEMORY):
-            return state;
+            return ({
+                ...state,
+                memory: action.payload,
+            })
         case(MEMORY_RECALL):
-            return state;
+            return ({
+                ...state,
+                total: action.payload,
+            })
         case(CLEAR_MEMORY):
-            return state;
+            return ({
+                ...state,
+                memory: 0,
+            })
         default:
             return state;
     }

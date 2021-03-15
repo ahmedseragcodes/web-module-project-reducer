@@ -31,9 +31,9 @@ function App(props) {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"M+"} onClick={()=>props.addToMemory(props.total)} />
+              <CalcButton value={"MR"} onClick={()=>props.memoryRecall(props.memory)} />
+              <CalcButton value={"MC"} onClick={props.clearMemory} />
             </div>
 
             <div className="row">
@@ -61,7 +61,7 @@ function App(props) {
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton value={"CE"} onClick={props.clearDisplay} />
             </div>
 
           </form>

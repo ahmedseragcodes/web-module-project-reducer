@@ -27,8 +27,8 @@ export const addToMemory = (numberToAdd) =>{
     return ({ type: ADD_TO_MEMORY, payload: numberToAdd })
 }
 
-export const memoryRecall = () =>{
-    return ({ type: MEMORY_RECALL })
+export const memoryRecall = (numberToRecall) =>{
+    return ({ type: MEMORY_RECALL, payload: numberToRecall })
 }
 
 export const clearMemory = ()=>{
