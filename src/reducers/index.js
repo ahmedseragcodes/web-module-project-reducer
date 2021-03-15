@@ -14,10 +14,12 @@ const calculateResult = (num1, num2, operation) => {
             return num1 * num2;
         case("-"):
             return num1 - num2;
+        default:
+            return num1*num2;
     }
 }
 
-const reducer = (state, action) => {
+const reducer = (state=initialState, action) => {
     switch(action.type) {
         case(ADD_ONE):
             return({
